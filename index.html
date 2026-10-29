@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jessica Otterwood</title>
+  <meta name="description" content="Personal homepage of Jessica Otterwood.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="#top">Jessica Otterwood</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Hi, I'm Jessica Otterwood.</h1>
+      <p class="tagline">UX designer, illustrator, and lifelong ocean lover.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        I'm a UX designer based in Monterey, California. I help small teams turn
+        messy ideas into clear, friendly interfaces, and I sketch every project
+        by hand before I ever open a design tool.
+      </p>
+      <p>
+        Outside of work, I volunteer at a local marine wildlife center, paint
+        watercolors of the coastline, and kayak the bay on weekends, usually
+        while counting sea otters.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email.</p>
+      <a class="button" href="mailto:jessica.otterwood@example.com">Email me</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> Jessica Otterwood</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

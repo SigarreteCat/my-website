@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Name</title>
+  <meta name="description" content="Personal homepage of Your Name.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-name" href="#top">Your Name</a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <h1>Hi, I'm Your Name.</h1>
+      <p class="tagline">A one-line description of what you do or care about.</p>
+    </section>
+
+    <section id="about">
+      <h2>About</h2>
+      <p>
+        Write a few sentences about yourself here: what you work on, what you're
+        learning, and what you enjoy outside of work.
+      </p>
+      <p>
+        Add a second paragraph if you like, for background, interests, or
+        anything else you want visitors to know.
+      </p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>The best way to reach me is by email.</p>
+      <a class="button" href="mailto:you@example.com">Email me</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year">2026</span> Your Name</p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

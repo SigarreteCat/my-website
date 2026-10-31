@@ -5,50 +5,99 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jessica Otterwood</title>
   <meta name="description" content="Personal homepage of Jessica Otterwood.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="site-name" href="#top">Jessica Otterwood</a>
+    <a class="site-name" href="#top">Jessica<span>.</span></a>
     <nav>
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle day and night">
+        <svg class="sun" data-sprite="sun"></svg><svg class="moon" data-sprite="moon"></svg>
+      </button>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <h1>Hi, I'm Jessica Otterwood.</h1>
-      <p class="tagline">UX designer, illustrator, and lifelong ocean lover.</p>
+      <div class="sky" aria-hidden="true"></div>
+      <div class="bubbles" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Hello there, I'm</p>
+        <h1>Jessica Otterwood</h1>
+        <p class="tagline"><span id="typed"></span><span class="caret">▌</span></p>
+        <a class="button" href="#projects">▶ See my work</a>
+      </div>
+
+      <!-- The otter crew, drawn pixel by pixel in script.js. Click them! -->
+      <svg class="critter otter-pup"   data-sprite="pup"   role="img" aria-label="A pixel otter pup in a blue scarf"></svg>
+      <svg class="critter otter-heart" data-sprite="heartOtter" role="img" aria-label="A happy pixel otter hugging a heart"></svg>
+      <svg class="critter otter-main"  data-sprite="otter" role="img" aria-label="A pixel otter holding a clam"></svg>
+
+      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true">
+        <path class="wave wave-back"/>
+        <path class="wave wave-mid"/>
+        <path class="wave wave-front"/>
+      </svg>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm a UX designer based in Monterey, California. I help small teams turn
-        messy ideas into clear, friendly interfaces, and I sketch every project
-        by hand before I ever open a design tool.
-      </p>
-      <p>
-        Outside of work, I volunteer at a local marine wildlife center, paint
-        watercolors of the coastline, and kayak the bay on weekends, usually
-        while counting sea otters.
-      </p>
-    </section>
+    <div class="deep">
+      <section id="about" class="reveal">
+        <h2>About</h2>
+        <p>
+          I'm a UX designer based in Monterey, California. I help small teams turn
+          messy ideas into clear, friendly interfaces, and I sketch every project
+          by hand before I ever open a design tool.
+        </p>
+        <p>
+          Outside of work, I volunteer at a local marine wildlife center, paint
+          watercolors of the coastline, and kayak the bay on weekends, usually
+          while counting sea otters.
+        </p>
+      </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>The best way to reach me is by email.</p>
-      <a class="button" href="mailto:jessica.otterwood@example.com">Email me</a>
-    </section>
+      <section id="projects" class="reveal">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <svg class="card-icon" data-sprite="shell" aria-hidden="true"></svg>
+            <h3>Tidepool Tracker</h3>
+            <p>A friendly app that helps volunteers log tidepool species on their phones, even offline.</p>
+            <span class="tag">UX Design</span>
+          </article>
+          <article class="card">
+            <svg class="card-icon" data-sprite="palette" aria-hidden="true"></svg>
+            <h3>Coastline Watercolors</h3>
+            <p>A year-long series of paintings of the Monterey coast, one per week, in every kind of weather.</p>
+            <span class="tag">Illustration</span>
+          </article>
+          <article class="card">
+            <svg class="card-icon" data-sprite="otterFace" aria-hidden="true"></svg>
+            <h3>Otter Count Dashboard</h3>
+            <p>A simple dashboard for the wildlife center showing otter sightings by season and location.</p>
+            <span class="tag">Data Viz</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p>The best way to reach me is by email. I reply faster than an otter cracks a clam.</p>
+        <a class="button" href="mailto:jessica.otterwood@example.com">✉ Email me</a>
+      </section>
+
+      <footer>
+        <p>&copy; <span id="year">2026</span> Jessica Otterwood · <span class="hint">psst… type "otter"</span></p>
+      </footer>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year">2026</span> Jessica Otterwood</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

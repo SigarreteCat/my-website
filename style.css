@@ -168,7 +168,8 @@ h1 {
   bottom: 0; left: 0;
   width: 200%;
   height: 140px;
-  z-index: 1;
+  z-index: 2;
+  pointer-events: none; /* let clicks reach the otter behind the water */
 }
 .wave { transition: fill 0.6s; }
 .wave-back  { fill: var(--wave-back);  animation: drift 14s linear infinite; }
@@ -179,24 +180,38 @@ h1 {
   to   { transform: translateX(-25%); }
 }
 
-/* ---------- Otter ---------- */
+/* ---------- Pixel otter ---------- */
 .otter {
   position: absolute;
-  bottom: 88px;
-  right: 10%;
-  width: clamp(110px, 18vw, 190px);
-  z-index: 2;
+  bottom: 64px;
+  right: 12%;
+  width: clamp(110px, 14vw, 170px);
+  z-index: 1; /* sits behind the waves, so it pokes out of the water */
   cursor: pointer;
-  animation: bob 4s ease-in-out infinite;
-  transform-origin: center;
+  animation: bob 2.4s steps(4) infinite;
+  filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.18));
 }
-.otter.spin { animation: spin 0.8s ease-in-out, bob 4s ease-in-out infinite; }
+.otter:hover { filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.18)) brightness(1.08); }
+.otter.hop { animation: hop 0.6s steps(6), bob 2.4s steps(4) 0.6s infinite; }
 @keyframes bob {
-  0%, 100% { transform: translateY(0) rotate(-3deg); }
-  50%      { transform: translateY(10px) rotate(3deg); }
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(8px); }
 }
-@keyframes spin {
-  to { transform: rotate(360deg); }
+@keyframes hop {
+  0%, 100% { transform: translateY(0); }
+  40%      { transform: translateY(-48px); }
+}
+
+.pixel-heart {
+  position: absolute;
+  width: 28px;
+  z-index: 20;
+  pointer-events: none;
+  animation: float-up 1.4s steps(10) forwards;
+}
+@keyframes float-up {
+  from { transform: translateY(0); opacity: 1; }
+  to   { transform: translateY(-140px); opacity: 0; }
 }
 
 /* ---------- Bubbles ---------- */
@@ -287,24 +302,24 @@ footer { color: var(--muted-on-deep); font-size: 0.9rem; padding-bottom: 3rem; }
 .swimmer {
   position: fixed;
   left: -120px;
-  font-size: 3rem;
+  width: 64px;
   z-index: 50;
   pointer-events: none;
-  animation: swim linear forwards;
+  animation: swim steps(40) forwards;
 }
 @keyframes swim {
-  0%   { transform: translateX(0) translateY(0) scaleX(-1); }
-  25%  { transform: translateX(30vw) translateY(-30px) scaleX(-1); }
-  50%  { transform: translateX(60vw) translateY(20px) scaleX(-1); }
-  75%  { transform: translateX(90vw) translateY(-20px) scaleX(-1); }
-  100% { transform: translateX(calc(100vw + 240px)) translateY(0) scaleX(-1); }
+  0%   { transform: translateX(0) translateY(0); }
+  25%  { transform: translateX(30vw) translateY(-30px); }
+  50%  { transform: translateX(60vw) translateY(20px); }
+  75%  { transform: translateX(90vw) translateY(-20px); }
+  100% { transform: translateX(calc(100vw + 240px)) translateY(0); }
 }
 
 /* ---------- Phones ---------- */
 @media (max-width: 600px) {
   nav { gap: 0.8rem; }
   nav a { font-size: 0.9rem; }
-  .otter { right: 4%; bottom: 80px; }
+  .otter { right: 6%; bottom: 60px; }
 }
 
 /* Respect people who prefer less motion */

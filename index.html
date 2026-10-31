@@ -7,7 +7,7 @@
   <meta name="description" content="Personal homepage of Jessica Otterwood.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,29 +18,32 @@
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
       <button id="theme-toggle" class="theme-toggle" aria-label="Toggle day and night">
-        <span class="sun">☀️</span><span class="moon">🌙</span>
+        <svg class="sun" data-sprite="sun"></svg><svg class="moon" data-sprite="moon"></svg>
       </button>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
+      <div class="sky" aria-hidden="true"></div>
       <div class="bubbles" aria-hidden="true"></div>
 
       <div class="hero-content">
         <p class="eyebrow">Hello there, I'm</p>
         <h1>Jessica Otterwood</h1>
-        <p class="tagline"><span id="typed"></span><span class="caret">|</span></p>
-        <a class="button" href="#projects">See my work ↓</a>
+        <p class="tagline"><span id="typed"></span><span class="caret">▌</span></p>
+        <a class="button" href="#projects">▶ See my work</a>
       </div>
 
-      <!-- A pixel-art sea otter, drawn by script.js. Click it! -->
-      <svg id="otter" class="otter" viewBox="0 0 24 18" shape-rendering="crispEdges" role="img" aria-label="A pixel-art sea otter holding a clam"></svg>
+      <!-- The otter crew, drawn pixel by pixel in script.js. Click them! -->
+      <svg class="critter otter-pup"   data-sprite="pup"   role="img" aria-label="A pixel otter pup in a blue scarf"></svg>
+      <svg class="critter otter-heart" data-sprite="heartOtter" role="img" aria-label="A happy pixel otter hugging a heart"></svg>
+      <svg class="critter otter-main"  data-sprite="otter" role="img" aria-label="A pixel otter holding a clam"></svg>
 
-      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
-        <path class="wave wave-back"  d="M0 60 C240 20 480 100 720 60 C960 20 1200 100 1440 60 L1440 120 L0 120 Z"/>
-        <path class="wave wave-mid"   d="M0 70 C240 110 480 30 720 70 C960 110 1200 30 1440 70 L1440 120 L0 120 Z"/>
-        <path class="wave wave-front" d="M0 85 C240 60 480 110 720 85 C960 60 1200 110 1440 85 L1440 120 L0 120 Z"/>
+      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" shape-rendering="crispEdges" aria-hidden="true">
+        <path class="wave wave-back"/>
+        <path class="wave wave-mid"/>
+        <path class="wave wave-front"/>
       </svg>
     </section>
 
@@ -63,19 +66,19 @@
         <h2>Projects</h2>
         <div class="cards">
           <article class="card">
-            <div class="card-icon">🐚</div>
+            <svg class="card-icon" data-sprite="shell" aria-hidden="true"></svg>
             <h3>Tidepool Tracker</h3>
             <p>A friendly app that helps volunteers log tidepool species on their phones, even offline.</p>
             <span class="tag">UX Design</span>
           </article>
           <article class="card">
-            <div class="card-icon">🎨</div>
+            <svg class="card-icon" data-sprite="palette" aria-hidden="true"></svg>
             <h3>Coastline Watercolors</h3>
             <p>A year-long series of paintings of the Monterey coast, one per week, in every kind of weather.</p>
             <span class="tag">Illustration</span>
           </article>
           <article class="card">
-            <div class="card-icon">🦦</div>
+            <svg class="card-icon" data-sprite="otterFace" aria-hidden="true"></svg>
             <h3>Otter Count Dashboard</h3>
             <p>A simple dashboard for the wildlife center showing otter sightings by season and location.</p>
             <span class="tag">Data Viz</span>
@@ -86,7 +89,7 @@
       <section id="contact" class="reveal">
         <h2>Contact</h2>
         <p>The best way to reach me is by email. I reply faster than an otter cracks a clam.</p>
-        <a class="button" href="mailto:jessica.otterwood@example.com">Email me</a>
+        <a class="button" href="mailto:jessica.otterwood@example.com">✉ Email me</a>
       </section>
 
       <footer>

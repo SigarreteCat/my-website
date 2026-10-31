@@ -5,50 +5,111 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jessica Otterwood</title>
   <meta name="description" content="Personal homepage of Jessica Otterwood.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="site-header">
-    <a class="site-name" href="#top">Jessica Otterwood</a>
+    <a class="site-name" href="#top">Jessica<span>.</span></a>
     <nav>
       <a href="#about">About</a>
+      <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle day and night">
+        <span class="sun">☀️</span><span class="moon">🌙</span>
+      </button>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <h1>Hi, I'm Jessica Otterwood.</h1>
-      <p class="tagline">UX designer, illustrator, and lifelong ocean lover.</p>
+      <div class="bubbles" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <p class="eyebrow">Hello there, I'm</p>
+        <h1>Jessica Otterwood</h1>
+        <p class="tagline"><span id="typed"></span><span class="caret">|</span></p>
+        <a class="button" href="#projects">See my work ↓</a>
+      </div>
+
+      <!-- A floating sea otter. Click it! -->
+      <svg id="otter" class="otter" viewBox="0 0 200 120" role="img" aria-label="A sea otter floating on its back">
+        <ellipse cx="100" cy="70" rx="70" ry="26" fill="#8b5e3c"/>
+        <ellipse cx="100" cy="64" rx="52" ry="16" fill="#c49a6c"/>
+        <circle cx="40" cy="58" r="24" fill="#8b5e3c"/>
+        <circle cx="38" cy="60" r="16" fill="#e8d2b0"/>
+        <circle cx="30" cy="54" r="3" fill="#1c1917"/>
+        <circle cx="44" cy="54" r="3" fill="#1c1917"/>
+        <ellipse cx="37" cy="63" rx="4" ry="3" fill="#1c1917"/>
+        <circle cx="24" cy="38" r="6" fill="#8b5e3c"/>
+        <circle cx="54" cy="38" r="6" fill="#8b5e3c"/>
+        <ellipse cx="88" cy="52" rx="9" ry="6" fill="#6b4a2f"/>
+        <ellipse cx="108" cy="52" rx="9" ry="6" fill="#6b4a2f"/>
+        <circle cx="98" cy="48" r="7" fill="#d97706"/>
+        <ellipse cx="168" cy="56" rx="12" ry="7" fill="#6b4a2f"/>
+        <path d="M170 74 q24 4 26 -10" stroke="#8b5e3c" stroke-width="10" fill="none" stroke-linecap="round"/>
+      </svg>
+
+      <svg class="waves" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+        <path class="wave wave-back"  d="M0 60 C240 20 480 100 720 60 C960 20 1200 100 1440 60 L1440 120 L0 120 Z"/>
+        <path class="wave wave-mid"   d="M0 70 C240 110 480 30 720 70 C960 110 1200 30 1440 70 L1440 120 L0 120 Z"/>
+        <path class="wave wave-front" d="M0 85 C240 60 480 110 720 85 C960 60 1200 110 1440 85 L1440 120 L0 120 Z"/>
+      </svg>
     </section>
 
-    <section id="about">
-      <h2>About</h2>
-      <p>
-        I'm a UX designer based in Monterey, California. I help small teams turn
-        messy ideas into clear, friendly interfaces, and I sketch every project
-        by hand before I ever open a design tool.
-      </p>
-      <p>
-        Outside of work, I volunteer at a local marine wildlife center, paint
-        watercolors of the coastline, and kayak the bay on weekends, usually
-        while counting sea otters.
-      </p>
-    </section>
+    <div class="deep">
+      <section id="about" class="reveal">
+        <h2>About</h2>
+        <p>
+          I'm a UX designer based in Monterey, California. I help small teams turn
+          messy ideas into clear, friendly interfaces, and I sketch every project
+          by hand before I ever open a design tool.
+        </p>
+        <p>
+          Outside of work, I volunteer at a local marine wildlife center, paint
+          watercolors of the coastline, and kayak the bay on weekends, usually
+          while counting sea otters.
+        </p>
+      </section>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>The best way to reach me is by email.</p>
-      <a class="button" href="mailto:jessica.otterwood@example.com">Email me</a>
-    </section>
+      <section id="projects" class="reveal">
+        <h2>Projects</h2>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">🐚</div>
+            <h3>Tidepool Tracker</h3>
+            <p>A friendly app that helps volunteers log tidepool species on their phones, even offline.</p>
+            <span class="tag">UX Design</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">🎨</div>
+            <h3>Coastline Watercolors</h3>
+            <p>A year-long series of paintings of the Monterey coast, one per week, in every kind of weather.</p>
+            <span class="tag">Illustration</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">🦦</div>
+            <h3>Otter Count Dashboard</h3>
+            <p>A simple dashboard for the wildlife center showing otter sightings by season and location.</p>
+            <span class="tag">Data Viz</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="reveal">
+        <h2>Contact</h2>
+        <p>The best way to reach me is by email. I reply faster than an otter cracks a clam.</p>
+        <a class="button" href="mailto:jessica.otterwood@example.com">Email me</a>
+      </section>
+
+      <footer>
+        <p>&copy; <span id="year">2026</span> Jessica Otterwood · <span class="hint">psst… type "otter"</span></p>
+      </footer>
+    </div>
   </main>
 
-  <footer>
-    <p>&copy; <span id="year">2026</span> Jessica Otterwood</p>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
